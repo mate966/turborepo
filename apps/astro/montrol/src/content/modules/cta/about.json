@@ -1,0 +1,8 @@
+{
+    "type": "cta",
+    "title": "Cta About",
+    "button": {
+        "text": "Button about",
+        "url": "/contact"
+    }
+}

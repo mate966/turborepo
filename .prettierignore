@@ -1,0 +1,31 @@
+# Build outputs
+dist/
+build/
+.next/
+.astro/
+.turbo/
+
+# Node modules
+node_modules/
+
+# Generated files
+*.d.ts
+coverage/
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Temporarily exclude README files until we fix code blocks
+**/README.md
+
+# Temporarily exclude .astro files until we fix parser
+# *.astro
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db 

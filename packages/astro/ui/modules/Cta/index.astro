@@ -1,0 +1,12 @@
+---
+import type { CtaProps } from './types';
+
+export interface Props extends CtaProps {}
+
+const { title, button } = Astro.props;
+---
+
+<div class="m-cta">
+    <h2>{title}</h2>
+    <!-- <a href={button.url}>{button.text}</a> -->
+</div>

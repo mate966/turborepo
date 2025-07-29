@@ -1,0 +1,8 @@
+{
+    "name": "Montrol",
+    "description": "Platform for creating and managing your business",
+    "version": "1.0.0",
+    "devtools": {
+        "panels": []
+    }
+}

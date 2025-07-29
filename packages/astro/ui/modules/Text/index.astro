@@ -1,0 +1,9 @@
+---
+import type { TextProps } from './types';
+
+export interface Props extends TextProps {}
+
+const { text } = Astro.props;
+---
+
+<div class="m-text">{text}</div>

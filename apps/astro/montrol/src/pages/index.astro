@@ -1,0 +1,43 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import { createDynamicModuleBuilder } from '@repo/astro-libs/content-helpers';
+import Layout from '../layouts/Layout.astro';
+import Hero from '@repo/astro-ui/modules/Hero/index.astro';
+import Text from '@repo/astro-ui/modules/Text/index.astro';
+import Cta from '@repo/astro-ui/modules/Cta/index.astro';
+
+const pageData = await getEntry('pages', 'homepage');
+if (!pageData) {
+    throw new Error('Page not found');
+}
+
+const moduleComponents = { hero: Hero, text: Text, cta: Cta };
+const moduleBuilder = createDynamicModuleBuilder(moduleComponents);
+
+const allModules = await getCollection('modules');
+
+const modulesData = Object.keys(moduleComponents).map(moduleName => {
+    const moduleData = allModules.find(m => m.id === `${moduleName}/homepage`);
+    return { name: moduleName, data: moduleData };
+});
+
+const builtModules = moduleBuilder.buildPageModules(modulesData);
+---
+
+<Layout title={pageData.data.title}>
+    <div class="container">
+        <article>
+            {
+                builtModules.map(module => {
+                    if (!module) return null;
+                    const { Component, props, data } = module;
+                    return (
+                        <section {...props}>
+                            <Component {...data} />
+                        </section>
+                    );
+                })
+            }
+        </article>
+    </div>
+</Layout>

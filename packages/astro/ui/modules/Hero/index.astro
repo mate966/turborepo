@@ -1,0 +1,47 @@
+---
+import type { HeroProps } from './types';
+
+export interface Props extends HeroProps {}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="m-hero">
+    <div class="m-hero__title">{title}</div>
+    {subtitle && <div class="m-hero__subtitle">{subtitle}</div>}
+</div>
+
+<style>
+    .m-hero {
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .m-hero--compact {
+        padding: 1rem 0;
+    }
+
+    .m-hero--large {
+        padding: 4rem 0;
+        font-size: 1.5em;
+    }
+
+    .m-hero__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .m-hero--compact .m-hero__title {
+        font-size: 2rem;
+    }
+
+    .m-hero--large .m-hero__title {
+        font-size: 3.5rem;
+    }
+
+    .m-hero__subtitle {
+        font-size: 1.2rem;
+        color: #666;
+    }
+</style>

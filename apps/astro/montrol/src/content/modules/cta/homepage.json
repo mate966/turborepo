@@ -1,0 +1,8 @@
+{
+    "type": "cta",
+    "title": "Cta Homepage",
+    "button": {
+        "text": "Button Cta Homepage",
+        "url": "/about"
+    }
+}
