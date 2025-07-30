@@ -9,9 +9,11 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/tailwind": "^6.0.0",
+        "astro": "^5.12.5",
+        "@astrojs/tailwind": "^6.0.2"
+    },
+    "devDependencies": {
         "@repo/astro-libs": "workspace:*",
-        "@repo/astro-ui": "workspace:*",
-        "astro": "^5.12.4"
+        "@repo/astro-ui": "workspace:*"
     }
 }
